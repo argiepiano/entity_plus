@@ -835,7 +835,7 @@ function _entity_plus_defaults_rebuild($entity_type) {
     );
 
     // Check for the existence of the module and status columns.
-    if (empty($info['disk storage']) && !in_array($keys['status'], $info['schema_fields_sql']['base table']) || !in_array($keys['module'], $info['schema_fields_sql']['base table'])) {
+    if (empty($info['disk storage']) && (!in_array($keys['status'], $info['schema_fields_sql']['base table']) || !in_array($keys['module'], $info['schema_fields_sql']['base table']))) {
       trigger_error("Missing database status and module columns for the exportable entity $entity_type.", E_USER_WARNING);
       return;
     }
