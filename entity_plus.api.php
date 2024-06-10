@@ -229,6 +229,11 @@
  *      may use this value to decide whether they should deal with a certain entity
  *      type. Defaults to TRUE to for entity types that are exportable, else to
  *      FALSE.
+ *    - disk storage: (optional) A boolean flag for configuration or exportable
+ *      entities to indicate that this entity is stored on disk, instead of the
+ *      database. It defaults to FALSE. NB: modules wishing to store entities on
+ *      disk should override EntityPlusControllerExportable to handle all disk
+ *      CRUD operations.
  *
  * @see entity_load()
  * @see hook_entity_info_alter()
